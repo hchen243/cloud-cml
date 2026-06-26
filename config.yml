@@ -40,15 +40,15 @@ target: azure
 #     use_spot_for_computes: false
 
 azure:
-  resource_group: resource-group-name
-  location: japaneeast # added
+  resource_group: rg-cml-free-poc # modified to match the resource group created in Azure
+  location: japaneast # added
   size: Standard_D4s_v3 # modified
   size_compute: unused_at_the_moment 
   storage_account: cmlfreepoc2026 # match with the storage account created in Azure
   container_name: cml # created manually in the storage account
 
 common:
-  disk_size: 64
+  disk_size: 128
   controller_hostname: cml-controller
   key_name: ssh-key-name
   allowed_ipv4_subnets_mgmt: ["66.37.50.28/32"] # hotel wifi public IP
@@ -112,7 +112,7 @@ secret:
 
     smartlicense_token:
       # Only used with dummy secret manager
-      raw_secret: your-smart-licensing-token
+      # raw_secret: your-smart-licensing-token
       # Path to secret, used with both Vault and Conjur:
       #path: example-org/example-project/smartlicense_token
       # Used with Vault only:
