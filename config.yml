@@ -50,7 +50,7 @@ azure:
 common:
   disk_size: 128
   controller_hostname: cml-controller
-  key_name: ssh-key-name
+  key_name: cml-free-azure-poc # modified
   allowed_ipv4_subnets_mgmt: ["66.37.50.28/32"] # hotel wifi public IP
   allowed_ipv4_subnets_cml2: ["66.37.50.28/32"] # hotel wifi public IP
   enable_patty: true
@@ -159,55 +159,28 @@ license:
 refplat:
   definitions:
     - alpine
-    - alpine-trex
-    - alpine-wanem
     - asav
-    - cat8000v
-    - cat9000v-q200
-    - cat9000v-uadp
-    - chrome
-    - csr1000v
     - desktop
-    - iol-xe
     - ioll2-xe
+    - iol-xe
+    - iol-xe-serial-4eth
     - iosv
     - iosvl2
-    - iosxrv9000
-    - net-tools
-    - nginx
-    - nxosv9000
-    - radius
     - server
-    - syslog
-    - tacplus
-    - thousandeyes-ea
     - ubuntu
+    - wireless-ap
+    - wireless-client
+
   images:
-    - alpine-base-3-21-3
-    - alpine-desktop-3-21-3
-    - alpine-trex-3-21-3
-    - alpine-wanem-3-21-3
-    - asav-9-23-1
-    - cat8000v-17-16-01a
-    # - cat9000v-q200-17-15-03
-    # - cat9000v-uadp-17-15-03
-    - chrome-136-0-7103-113-1
-    - csr1000v-17-03-08a
-    - dnsmasq-2-9-0
-    - firefox-138-0-4-build1
-    - frr-10-2-1-r1
-    - ioll2-xe-17-16-01a
-    - iol-xe-17-16-01a
-    - iol-xe-17-16-01a-serial-4eth
-    - iosv-159-3-m10
+    - alpine-base-3-23-3
+    - alpine-desktop-3-23-3
+    - asav-9-24-1
+    - ioll2-xe-17-18-02
+    - iol-xe-17-18-02
+    - iol-xe-serial-4eth-17-18-02
+    - iosv-159-3-m12
     - iosvl2-2020
-    # - iosxrv9000-25-1-1
-    - net-tools-1-0-0
-    - nginx-3-38
-    # - nxosv9300-10-5-3-f
-    - radius-3-2-1
-    - server-tcl-16-0
-    - syslog-3-38
-    - tacplus-f4-0-4-28
-    - thousandeyes-ea-1-210-0
-    - ubuntu-24-04-20250503
+    - server-tcl-17-0
+    - ubuntu-24-04-20260307
+    - wireless-ap-24-04-20260409
+    - wireless-client-24-04-20260409
