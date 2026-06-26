@@ -8,36 +8,38 @@
 # make sure that you ran the prepare.sh / prepare.bat script!
 target: azure
 
-# aws:
-#   region: us-east-1
-#   availability_zone: us-east-1a
-#   bucket: bucket-name-goes-here
-#   # flavor: c5.2xlarge
-#   flavor: m5zn.metal
-#   flavor_compute: m5zn.metal
-#   profile: permission-profile-goes-here
-#   #
-#   # The following two attributes are used in the aws-mini variant. They specify
-#   # the subnet and the security group ID the CML VM should use. The are NOT
-#   # used when using the regular AWS deployment option (non-mini).
-#   subnet_id: ""
-#   sg_id: ""
-#   #
-#   # The followin values are used by the regular AWS deployment option.
-#   # When specifying a VPC ID below then this prefix must exist on that VPC!
-#   public_vpc_ipv4_cidr: 10.0.0.0/16
-#   enable_ebs_encryption: false
-#   #
-#   # Leave empty to create a custom VPC / Internet gateway, or provide the IDs
-#   # of the VPC / gateway to use, they must exist and properly associated.
-#   # also: an IPv6 CIDR prefix must be associated with the specified VPC
-#   vpc_id: ""
-#   gw_id: ""
-#   #
-#   # Use spot instances, when available for the VMs forming the cluster
-#   spot_instances:
-#     use_spot_for_controller: false
-#     use_spot_for_computes: false
+# Not in use, previously commented out from line 11 to 41 and cause an error
+# when running terraform plan.
+aws:
+  region: us-east-1
+  availability_zone: us-east-1a
+  bucket: bucket-name-goes-here
+  # flavor: c5.2xlarge
+  flavor: m5zn.metal
+  flavor_compute: m5zn.metal
+  profile: permission-profile-goes-here
+  #
+  # The following two attributes are used in the aws-mini variant. They specify
+  # the subnet and the security group ID the CML VM should use. The are NOT
+  # used when using the regular AWS deployment option (non-mini).
+  subnet_id: ""
+  sg_id: ""
+  #
+  # The followin values are used by the regular AWS deployment option.
+  # When specifying a VPC ID below then this prefix must exist on that VPC!
+  public_vpc_ipv4_cidr: 10.0.0.0/16
+  enable_ebs_encryption: false
+  #
+  # Leave empty to create a custom VPC / Internet gateway, or provide the IDs
+  # of the VPC / gateway to use, they must exist and properly associated.
+  # also: an IPv6 CIDR prefix must be associated with the specified VPC
+  vpc_id: ""
+  gw_id: ""
+  #
+  # Use spot instances, when available for the VMs forming the cluster
+  spot_instances:
+    use_spot_for_controller: false
+    use_spot_for_computes: false
 
 azure:
   resource_group: rg-cml-free-poc # modified to match the resource group created in Azure
