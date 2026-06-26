@@ -158,4 +158,26 @@ license is released prior to destroying the CML deployment.
 
 This can be done with `terraform destroy`.
 
+# personal execution notes
+After running "terraform plan"
+
+
+│ Error: Error in function call
+│ 
+│   on modules/deploy/azure/main.tf line 9, in locals:
+│    9:   vars = templatefile("${path.module}/../data/vars.sh", {
+│   10:     cfg = merge(
+│   11:       var.options.cfg,
+│   12:       { sas_token = data.azurerm_storage_account_sas.cml.sas }
+│   13:     )
+│   14:     }
+│   15:   )
+│     ├────────────────
+│     │ while calling templatefile(path, vars)
+│     │ path.module is "modules/deploy/azure"
+│     │ var.options.cfg is object with 8 attributes
+│ 
+│ Call to function "templatefile" failed: modules/deploy/azure/../data/vars.sh:9,22-26: Unsupported attribute; This object
+│ does not have an attribute named "aws"., and 1 other diagnostic(s).
+
 EOF
